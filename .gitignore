@@ -1,0 +1,5 @@
+/static/https:/*
+/static/wp-content/*
+/static/images/*
+/content/posts/*.md
+/public/*

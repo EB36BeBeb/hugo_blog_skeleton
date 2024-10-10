@@ -1,0 +1,93 @@
+baseURL: https://blog.ebeb.be/
+languageCode: ko-KR
+title: EBeb's BLOG
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts", "papermod"]
+
+
+taxonomies:
+  category: category
+  tag: tag
+
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  description: 취미, 코딩, 유학생활
+  author: EBeb
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: false
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: false
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  showBreadCrumbs: true
+  showCodeCopyButtons: true
+  comments: true
+  hideFooter: true
+  
+  assets:
+    favicon: /favicon.ico
+    disableHLJS: true
+  markup:
+    highlight:
+      codeFences: true
+      guessSyntax: true
+      style: monokai
+  outputFormats:
+    RSS:
+      mediaType: application/rss+xml
+      baseName: feed
+  
+  homeInfoParams:
+    Title: "EBeb Blog"
+    Content: >
+      **EBeb**의 끼적끼적 **개발**하면서 배운 내용들과 **유학생활**과 **취미생활** 등등을 적어 둔 블로그입니다.
+
+    
+  socialIcons:
+      - name: github
+        title: EBeb Github
+        url: "https://github.com/EB36BeBeb"
+      - name: X
+        title: EBeb on Twitter
+        url: "https://x.com/EB36_Be_B3b"
+  
+menu:
+  main:
+    # - name: Archive
+    #   url: archives
+    #   weight: 5
+    - name: Search
+      url: search/
+      weight: 10
+    # - name: Tags
+    #   url: tags/
+    #   weight: 10
+    # - name: WiKi
+    #   url: https://github.com/adityatelange/hugo-PaperMod/wiki/
+
+deployment:
+  targets:
+    - name: "s3"
+      URL: "s3://blog.ebeb.be?region=ap-northeast-1"
